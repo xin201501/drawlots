@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(testcmake VERSION 0.1.0)
+
+include(CTest)
+enable_testing()
+
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
+include_directories(include)
+link_directories(lib)
+set(CMAKE_CXX_FLAGS "-std=c++20 -Wall")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/debug) 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/release)
+add_executable(draw_lots_at_class_1912_software_college ${SRC_FILES})
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
