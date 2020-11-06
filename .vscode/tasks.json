@@ -27,7 +27,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: cl.ex  e build active file",
+            "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
                 "/Zi",
